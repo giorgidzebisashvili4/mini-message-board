@@ -10,10 +10,10 @@
     <p>This is a simple message board made with Node.js and Express.</p>
     <p>Here are the messages:</p>
     <ul>
-      <% messages.forEach(message => { %>
+      <% messages.forEach((message, index) => { %>
       <li>
-        <%= message.text %> - <%= message.user %> - <%=
-        message.added.toLocaleString() %>
+        <strong><%= message.user %>:</strong> <%= message.text %> <br />
+        <a href="/new/<%= index %>">Open</a>
       </li>
       <% }) %>
     </ul>

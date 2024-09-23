@@ -32,6 +32,16 @@ app.get("/", (req, res) => {
 app.get("/new", (req, res) => {
   res.render("form", { title: "Mini Messageboard" });
 });
+
+app.get("/new/:id", (req, res) => {
+  const messageId = parseInt(req.params.id, 10);
+  if (messageId >= 0 && messageId < messages.length) {
+    const message = messages[messageId];
+    res.render("messageDetail", { title: "Message Detail", message: message });
+  } else {
+    res.status(404).send("Message not found");
+  }
+});
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/new", (req, res) => {
