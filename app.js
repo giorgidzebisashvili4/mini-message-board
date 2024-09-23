@@ -26,7 +26,7 @@ const messages = [
 ];
 
 app.get("/", (req, res) => {
-  res.render("home", { messages });
+  res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
 app.get("/message", (req, res) => {
