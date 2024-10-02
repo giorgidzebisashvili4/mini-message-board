@@ -15,11 +15,13 @@
       <% messages.forEach((message, index) => { %>
       <li>
         <strong><%= message.username %>:</strong> <%= message.text %> <br />
-        <a href="/message/<%= message.id %>">Open</a>
+        <a href="/message/<%= message.id %>">Open</a> <strong>|</strong>
+        <a href="/message/delete/<%= message.id %>">delete</a>
+        <!-- <a href="/message/edit/<%= message.id %>">EDIT</a> -->
       </li>
       <% }) %>
     </ul>
-    <a href="/new">
+    <a href="/message/new">
       <span> chat </span>
     </a>
   </body>
