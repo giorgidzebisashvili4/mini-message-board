@@ -7,12 +7,14 @@
   </head>
   <body>
     <h1>Welcome to the Mini Message Board</h1>
-    <p>This is a simple message board made with Node.js and Express.</p>
+    <p>
+      This is a simple message board made with Node.js, postgreSQL and Express.
+    </p>
     <p>Here are the messages:</p>
     <ul>
       <% messages.forEach((message, index) => { %>
       <li>
-        <strong><%= message.user %>:</strong> <%= message.text %> <br />
+        <strong><%= message.username %>:</strong> <%= message.text %> <br />
         <a href="/new/<%= index %>">Open</a>
       </li>
       <% }) %>
